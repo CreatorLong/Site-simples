@@ -144,8 +144,8 @@ h1 {
 </div>
 
 <div id="rolagem">
-  <button onclick="window.scrollTo(0, 0)">Subir</button>
-  <button onclick="window.scrollTo(0, document.body.scrollHeight)">Descer</button>
+  <button onclick="window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })">Subir</button>
+  <button onclick="window.scrollTo({ top: document.body.scrollHeight, left: 0, behavior: 'smooth' })">Descer</button>
 </div>
 
 </body>
