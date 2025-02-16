@@ -5,39 +5,64 @@
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0); /* Gradiente de fundo */
-  color: #333; /* Cor do texto */
+  background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+  color: #333;
   text-align: center;
-  overflow: hidden; /* Esconde a barra de rolagem */
-  margin: 0; /* Remove margens */
+  overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+  margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o body ocupa a tela inteira */
+  min-height: 100vh;
 }
 
 h1 {
   font-size: 2em;
   margin-top: 20px;
-  color: #666; /* Cor do título */
-  animation: fadeInUp 1s ease-in-out; /* Animação de entrada */
+  color: #666;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 #texto {
   width: 80%;
-  max-width: 900px; /* Largura máxima do texto */
+  max-width: 900px;
   margin: 20px auto;
   line-height: 1.6;
-  text-align: justify; /* Justifica o texto */
+  text-align: justify;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
 }
 
 #texto p {
-  margin-bottom: 1em; /* Espaçamento entre parágrafos */
-  animation: fadeIn 1s ease-in-out; /* Animação de entrada */
+  margin-bottom: 1em;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Botões de rolagem */
+#rolagem {
+  position: fixed; /* Fixa os botões na tela */
+  bottom: 20px; /* Distância da parte inferior */
+  right: 20px; /* Distância da parte direita */
+  display: flex;
+  flex-direction: column; /* Botões em coluna */
+}
+
+#rolagem button {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.8; /* Opacidade inicial */
+  transition: opacity 0.3s; /* Transição de opacidade */
+}
+
+#rolagem button:hover {
+  opacity: 1; /* Opacidade total ao passar o mouse */
 }
 
 /* Animações */
@@ -118,6 +143,10 @@ h1 {
   </p>
 </div>
 
+<div id="rolagem">
+  <button onclick="window.scrollTo(0, 0)">Subir</button>
+  <button onclick="window.scrollTo(0, document.body.scrollHeight)">Descer</button>
+</div>
+
 </body>
-                                                            </html>
-                                                            
+</html>
